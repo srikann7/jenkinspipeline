@@ -23,7 +23,7 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "scp -v -o StrictHostKeyChecking=yes -i 'C:/Users/srikann/Downloads/tomcatdemo.pem' **/target/*.war ec2-user@${params.tomcat_staging}:/var/lib/tomcat7/webapps"
+                        bat "scp -v -o StrictHostKeyChecking=no -i 'C:/Users/srikann/Downloads/tomcatdemo.pem' **/target/*.war ec2-user@${params.tomcat_staging}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
